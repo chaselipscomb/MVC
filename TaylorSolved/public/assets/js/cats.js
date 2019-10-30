@@ -40,7 +40,7 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newCat = {
+    var newBurger = {
       name: $("#ca").val().trim(),
       sleepy: $("[name=sleepy]:checked").val().trim()
     };
@@ -48,7 +48,7 @@ $(function() {
     // Send the POST request.
     $.ajax("/api/cats", {
       type: "POST",
-      data: newCat
+      data: newBurger
     }).then(
       function() {
         console.log("created new cat");
