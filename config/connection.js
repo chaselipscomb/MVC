@@ -1,6 +1,9 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
+if(process.env.JAWSDB_URL) {
+    connection=mysql.createConnection(process.env.JAWSDB_URL);
+} else {
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
@@ -8,6 +11,7 @@ var connection = mysql.createConnection({
   password: "root",
   database: "cat_db"
 });
+};
 
 // we create a promise so that we can make sure any request waits
 // for connection to be connected before running any command.
