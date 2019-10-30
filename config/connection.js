@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
   password: "root",
   database: "cat_db"
 });
-};
+}; 
 
 // we create a promise so that we can make sure any request waits
 // for connection to be connected before running any command.
