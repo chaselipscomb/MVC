@@ -1,0 +1,42 @@
+
+<div class="leftside">
+<h2>Devoured Burgers</h2>
+
+<ul>
+  {{#each cats}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+<div class="rightside">
+<h2>Uneaten Burgers</h2>
+
+<ul>
+  {{#each cats}}
+    {{#if sleepy}}
+      {{> cats/cat-block sleep=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+<div class="middle">
+  <img src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/uh59Wh0/burger-icon-cartoon-illustration-hand-drawn-animation-transparent_eympmud__F0004.png" alt="burger">
+<h1>Eat Da Burger</h1>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="slee">List</label><br>
+    <input type="radio" name="sleepy" value="1" checked> Add to List<br>
+    <input type="radio" name="sleepy" value="0"> Devour Now!
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
+</div>
